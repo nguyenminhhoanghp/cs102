@@ -5,6 +5,8 @@ Xem ghi chú tóm tắt các bài học: [LINK](https://github.com/STEAMforVietn
 ## Miêu tả dự án
 
 <TODO: điền thêm thông tin dự án cuối khoá của bạn khi nộp bài>
+Tính năng mới:
+Shadow Boss tạo ra Shadow
 
 ## Đường dẫn đến phiên bản cuối mỗi bài học
 
