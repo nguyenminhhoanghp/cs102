@@ -33,7 +33,7 @@ class ShadowBoss(Shadow):
         super()._update_action()
 
     def _get_angry(self):
-        for _ in range(10):
+        for _ in range(5):
             bullet_id = self.world.add_entity(
                 EntityType.SHADOW_BULLET,
                 self.rect.centerx + random.random() * self.rect.width / 2,
@@ -42,6 +42,17 @@ class ShadowBoss(Shadow):
 
             bullet: Bullet = self.world.get_entity(bullet_id)
             bullet.move_random()
+
+        for _ in range(2):
+            bullet_id = self.world.add_entity(
+                EntityType.SHADOW,
+                self.rect.centerx + random.random() * self.rect.width / 2,
+                self.rect.centery + random.random() * self.rect.height / 2,
+            )
+
+            bullet: Bullet = self.world.get_entity(bullet_id)
+            bullet.move_random()
+
 
     def _take_damage(self, damage: int):
         self.hp -= damage
@@ -68,7 +79,7 @@ class ShadowBoss(Shadow):
         if self.hp > 0:
             util.display_text(
                 screen,
-                f"{self.hp} / 100",
+                f"{self.hp} / 500",
                 x=self.rect.x,
                 y=self.rect.top + self.HP_TEXT_HEIGHT_OFFSET,
                 color=Color.BOSS_HP_BAR,
